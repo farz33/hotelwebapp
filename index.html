@@ -60,6 +60,11 @@
             $('#checkIn').attr('min', today);
             $('#checkOut').attr('min', today);
 
+            $('#checkIn').on('change', function() {
+                const checkInDate = $(this).val();
+                $('#checkOut').attr('min', checkInDate);
+            });
+
             $('#bookingForm').on('submit', function(e) {
                 e.preventDefault();
                 
